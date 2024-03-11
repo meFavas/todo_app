@@ -60,7 +60,7 @@ class _TodocardState extends State<Todocard> {
                   style: TextStyle(fontWeight: FontWeight.w600),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed:widget.oneditpressed,
                   icon: Icon(Icons.edit),
                   color: Todocolors.todoblack,
                 ),

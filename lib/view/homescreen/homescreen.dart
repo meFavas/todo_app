@@ -29,10 +29,19 @@ class _HomescreenState extends State<Homescreen> {
           : ListView.separated(
               itemBuilder: (context, index) {
                 var element = mybox.get(obj.notekeys[index]);
-                return Todocard(title: element["title"], time: element["time"]);
+                return Todocard(
+                  title: element["title"].toString(),
+                  time: element["time"].toString(),
+                  ondeletepressed: () {
+                    obj.deletedata(obj.notekeys[index]);
+                    setState(() {});
+                  },
+                  oneditpressed: () {},
+                );
               },
               separatorBuilder: (context, index) => SizedBox(height: 10),
               itemCount: obj.notekeys.length),
+
       //appbar----------------------------
       appBar: AppBar(
         leading: IconButton(
